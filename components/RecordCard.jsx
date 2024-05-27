@@ -6,7 +6,7 @@ const RecordCard = ({ item }) => {
   const { duration, stars, feedback, date, $id } = item;
 
   const truncateFeedback = (text, maxLength) => {
-    if (text.length > maxLength) {
+    if (text?.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
     return text;
@@ -19,7 +19,7 @@ const RecordCard = ({ item }) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className="border-softBrand mb-2 flex w-full flex-row items-center justify-between rounded-lg border-2 p-4"
+      className="mb-2 flex w-full flex-row items-center justify-between rounded-lg border-2 border-softBrand p-4"
     >
       <Image
         className="h-16 w-16 "
