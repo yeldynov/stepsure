@@ -9,9 +9,10 @@ import {
   Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { deleteRecord, getSingleRecord } from "../../../lib/appwrite";
+import { deleteRecord, getSingleRecord } from "@/lib/appwrite";
 import useAppwrite from "@/lib/useAppwrite";
-import { getIcon } from "../../../lib/utils";
+import { getIcon } from "@/lib/utils";
+import { icons } from "@/constants";
 
 const SessionDetail = () => {
   const { id } = useGlobalSearchParams();
@@ -38,27 +39,47 @@ const SessionDetail = () => {
   return (
     <SafeAreaView className="h-full bg-background">
       <View className="my-6 flex-1 items-center space-y-6 px-4">
-        <Image
-          resizeMode="contain"
-          className="h-28 w-28"
-          source={getIcon(duration)}
-        />
-        <Text>{feedback}</Text>
-        <StarRating stars={stars} />
         <TouchableOpacity
-          onPress={() => setModalVisible(true)}
-          className="flex w-full items-center justify-center rounded-lg bg-accentRed px-8 py-3"
+          onPress={() => router.push("/sessions")}
+          className="flex h-[40px] w-[120px] flex-row items-center justify-center self-start rounded-[20px]  bg-dark"
         >
+          <Image
+            className="mr-2 h-5 w-5"
+            source={icons.leftArrow}
+            resizeMode="contain"
+          />
           <Text className="font-pmedium text-lg font-semibold text-white">
-            Delete Session
+            Back
           </Text>
         </TouchableOpacity>
-        <Link
-          className="rounded-lg border border-softBrand px-4 py-2"
-          href="/sessions"
-        >
-          Go Back
-        </Link>
+        <Image
+          resizeMode="contain"
+          className="h-56 w-56"
+          source={getIcon(duration)}
+        />
+
+        <View className="my-4 min-h-[15vh] w-full bg-[#FFBB70] p-4">
+          <Text>{feedback}</Text>
+        </View>
+        <StarRating stars={stars} />
+        <View className="flex-row items-center justify-between gap-4 px-4">
+          <TouchableOpacity
+            onPress={() => {}}
+            className="flex w-1/2 items-center justify-center rounded-lg bg-freshGreen px-8 py-3"
+          >
+            <Text className="font-pmedium text-lg font-semibold text-white">
+              Edit
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setModalVisible(true)}
+            className="flex w-1/2 items-center justify-center rounded-lg bg-accentRed px-8 py-3"
+          >
+            <Text className="font-pmedium text-lg font-semibold text-white">
+              Delete
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <Modal
@@ -101,13 +122,15 @@ const SessionDetail = () => {
 
 // Star Component
 const Star = ({ filled }) => (
-  <Text style={{ color: filled ? "green" : "gray" }}>★</Text>
+  <Text className={`${filled ? "text-sereneTeal" : "text-calmGray"} text-5xl`}>
+    ★
+  </Text>
 );
 
 const StarRating = ({ stars }) => {
   const totalStars = 5;
   return (
-    <View style={{ flexDirection: "row" }}>
+    <View className="my-2 flex-row">
       {Array.from({ length: totalStars }, (_, index) => (
         <Star key={index} filled={index < stars} />
       ))}

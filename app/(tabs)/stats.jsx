@@ -33,7 +33,7 @@ const Stats = () => {
 
   useEffect(() => {
     if (records) {
-      console.log("Records:", records);
+      // console.log("Records:", records);
 
       const last7Days = Array.from({ length: 7 }, (_, index) =>
         moment().subtract(index, "days").format("YYYY-MM-DD"),
@@ -46,7 +46,7 @@ const Stats = () => {
           (record) => moment(record.date).format("YYYY-MM-DD") === date,
         );
 
-        console.log(`Records for ${date}:`, dayRecords);
+        // console.log(`Records for ${date}:`, dayRecords);
 
         const totalDuration = dayRecords.reduce((sum, record) => {
           const durationInMinutes = record.duration / 60000;
@@ -61,7 +61,7 @@ const Stats = () => {
         };
       });
 
-      console.log("Aggregated Data:", aggregatedData);
+      // console.log("Aggregated Data:", aggregatedData);
       setBarData(aggregatedData);
     }
   }, [records]);
@@ -83,6 +83,9 @@ const Stats = () => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
+        <Text className="mt-5 text-center font-psemibold text-lg">
+          Last 7 days
+        </Text>
         <View className="my-6 flex-1 items-center justify-center space-y-6 px-4">
           {barData.length > 0 ? (
             <BarChart
