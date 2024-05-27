@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# StepSure app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+StepSure is a mobile app designed to help you track and improve your daily activities while promoting mindfulness and well-being. Whether it's tracking your steps, staying active, or reaching your goals, StepSure is here to support you every step of the way.
 
-## Get started
+## Tech Stack:
 
-1. Install dependencies
+- Next.Js
+- NativeWind (Tailwind CSS)
+- Appwrite (for Backend)
+- Gifted Charts
 
-   ```bash
-   npm install
-   ```
+<!-- ## Screenshots -->
 
-2. Start the app
+<!-- Here are some screenshots of the StepSure app: -->
 
-   ```bash
-    npx expo start
-   ```
+<!-- <p float="left">
+   <img src="assets/screenshots/0.jpg" alt="drawing" width="200"/>
+   <img src="assets/screenshots/2.jpg" alt="drawing" width="200"/>
+   <img src="assets/screenshots/3.jpg" alt="drawing" width="200"/>
+</p> -->
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Activity Tracking:** Keep track of your daily steps and physical activities to stay motivated and achieve your fitness goals.
+- **Achievements:** Earn badges and rewards for reaching milestones and staying consistent with your activities.
+- **Progress Insights:** Gain insights into your activity patterns and make adjustments for a healthier and more balanced lifestyle.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Installation
 
-## Get a fresh project
+Yor can download Android App [Here](https://expo.dev/accounts/shangnik/projects/gvozdi2/builds/0d94ef72-a17d-4aae-b32f-7f64ff4f0820)
 
-When you're ready, run:
+## Feedback and Support
 
-```bash
-npm run reset-project
-```
+We value your feedback and would love to hear from you. If you have any questions, suggestions, or issues regarding StepSure, please reach out to our [Telegram Support Bot](https://t.me/gvozdi_support_bot).
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Enjoy your journey towards a healthier and more mindful lifestyle with StepSure!
 
-## Learn more
+## License
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is licensed under the [MIT License](LICENSE).
